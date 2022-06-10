@@ -604,8 +604,7 @@ describe('Configure AWS Credentials', () => {
             RoleArn: 'arn:aws:iam::111111111111:role/MY-ROLE',
             RoleSessionName: 'GitHubActions',
             DurationSeconds: 6 * 3600,
-            WebIdentityToken: 'testpayload',
-            SourceIdentity: GITHUB_ACTOR_SANITIZED
+            WebIdentityToken: 'testpayload'
         })
     });
 
@@ -619,8 +618,7 @@ describe('Configure AWS Credentials', () => {
             RoleArn: 'arn:aws:iam::111111111111:role/MY-ROLE',
             RoleSessionName: 'GitHubActions',
             DurationSeconds: 6 * 3600,
-            WebIdentityToken: 'testpayload',
-            SourceIdentity: GITHUB_ACTOR_SANITIZED
+            WebIdentityToken: 'testpayload'
         })
     });
 
@@ -637,8 +635,7 @@ describe('Configure AWS Credentials', () => {
             RoleArn: 'arn:aws:iam::111111111111:role/MY-ROLE',
             RoleSessionName: 'GitHubActions',
             DurationSeconds: 3600,
-            WebIdentityToken: 'testtoken',
-            SourceIdentity: GITHUB_ACTOR_SANITIZED
+            WebIdentityToken: 'testtoken'
         });
         expect(core.setSecret).toHaveBeenNthCalledWith(1, FAKE_STS_ACCESS_KEY_ID);
         expect(core.setSecret).toHaveBeenNthCalledWith(2, FAKE_STS_SECRET_ACCESS_KEY);
@@ -658,8 +655,7 @@ describe('Configure AWS Credentials', () => {
             RoleArn: 'arn:aws:iam::111111111111:role/MY-ROLE',
             RoleSessionName: 'GitHubActions',
             DurationSeconds: CUSTOM_ROLE_DURATION,
-            WebIdentityToken: 'testtoken',
-            SourceIdentity: GITHUB_ACTOR_SANITIZED
+            WebIdentityToken: 'testtoken'
         });
         expect(core.setSecret).toHaveBeenNthCalledWith(1, FAKE_STS_ACCESS_KEY_ID);
         expect(core.setSecret).toHaveBeenNthCalledWith(2, FAKE_STS_SECRET_ACCESS_KEY);
