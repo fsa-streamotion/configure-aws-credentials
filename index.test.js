@@ -468,6 +468,7 @@ describe('Configure AWS Credentials', () => {
             RoleArn: ROLE_ARN,
             RoleSessionName: 'GitHubActions',
             DurationSeconds: 6 * 3600,
+            SourceIdentity: GITHUB_ACTOR_SANITIZED,
             Tags: [
                 {Key: 'GitHub', Value: 'Actions'},
                 {Key: 'Repository', Value: ENVIRONMENT_VARIABLE_OVERRIDES.GITHUB_REPOSITORY},
@@ -490,6 +491,7 @@ describe('Configure AWS Credentials', () => {
             RoleArn: ROLE_ARN,
             RoleSessionName: 'GitHubActions',
             DurationSeconds: 5,
+            SourceIdentity: GITHUB_ACTOR_SANITIZED,
             Tags: [
                 {Key: 'GitHub', Value: 'Actions'},
                 {Key: 'Repository', Value: ENVIRONMENT_VARIABLE_OVERRIDES.GITHUB_REPOSITORY},
@@ -512,6 +514,7 @@ describe('Configure AWS Credentials', () => {
             RoleArn: ROLE_ARN,
             RoleSessionName: 'MySessionName',
             DurationSeconds: 6 * 3600,
+            SourceIdentity: GITHUB_ACTOR_SANITIZED,
             Tags: [
                 {Key: 'GitHub', Value: 'Actions'},
                 {Key: 'Repository', Value: ENVIRONMENT_VARIABLE_OVERRIDES.GITHUB_REPOSITORY},
@@ -578,6 +581,7 @@ describe('Configure AWS Credentials', () => {
             RoleArn: 'arn:aws:iam::123456789012:role/MY-ROLE',
             RoleSessionName: 'GitHubActions',
             DurationSeconds: 6 * 3600,
+            SourceIdentity: GITHUB_ACTOR_SANITIZED,
             Tags: [
                 {Key: 'GitHub', Value: 'Actions'},
                 {Key: 'Repository', Value: ENVIRONMENT_VARIABLE_OVERRIDES.GITHUB_REPOSITORY},
@@ -600,7 +604,8 @@ describe('Configure AWS Credentials', () => {
             RoleArn: 'arn:aws:iam::111111111111:role/MY-ROLE',
             RoleSessionName: 'GitHubActions',
             DurationSeconds: 6 * 3600,
-            WebIdentityToken: 'testpayload'
+            WebIdentityToken: 'testpayload',
+            SourceIdentity: GITHUB_ACTOR_SANITIZED
         })
     });
 
@@ -614,7 +619,8 @@ describe('Configure AWS Credentials', () => {
             RoleArn: 'arn:aws:iam::111111111111:role/MY-ROLE',
             RoleSessionName: 'GitHubActions',
             DurationSeconds: 6 * 3600,
-            WebIdentityToken: 'testpayload'
+            WebIdentityToken: 'testpayload',
+            SourceIdentity: GITHUB_ACTOR_SANITIZED
         })
     });
 
@@ -631,7 +637,8 @@ describe('Configure AWS Credentials', () => {
             RoleArn: 'arn:aws:iam::111111111111:role/MY-ROLE',
             RoleSessionName: 'GitHubActions',
             DurationSeconds: 3600,
-            WebIdentityToken: 'testtoken'
+            WebIdentityToken: 'testtoken',
+            SourceIdentity: GITHUB_ACTOR_SANITIZED
         });
         expect(core.setSecret).toHaveBeenNthCalledWith(1, FAKE_STS_ACCESS_KEY_ID);
         expect(core.setSecret).toHaveBeenNthCalledWith(2, FAKE_STS_SECRET_ACCESS_KEY);
@@ -651,7 +658,8 @@ describe('Configure AWS Credentials', () => {
             RoleArn: 'arn:aws:iam::111111111111:role/MY-ROLE',
             RoleSessionName: 'GitHubActions',
             DurationSeconds: CUSTOM_ROLE_DURATION,
-            WebIdentityToken: 'testtoken'
+            WebIdentityToken: 'testtoken',
+            SourceIdentity: GITHUB_ACTOR_SANITIZED
         });
         expect(core.setSecret).toHaveBeenNthCalledWith(1, FAKE_STS_ACCESS_KEY_ID);
         expect(core.setSecret).toHaveBeenNthCalledWith(2, FAKE_STS_SECRET_ACCESS_KEY);
@@ -685,6 +693,7 @@ describe('Configure AWS Credentials', () => {
             RoleArn: ROLE_ARN,
             RoleSessionName: 'GitHubActions',
             DurationSeconds: 6 * 3600,
+            SourceIdentity: GITHUB_ACTOR_SANITIZED,
             Tags: [
                 {Key: 'GitHub', Value: 'Actions'},
                 {Key: 'Repository', Value: ENVIRONMENT_VARIABLE_OVERRIDES.GITHUB_REPOSITORY},
@@ -712,6 +721,7 @@ describe('Configure AWS Credentials', () => {
             RoleArn: ROLE_ARN,
             RoleSessionName: 'GitHubActions',
             DurationSeconds: 6 * 3600,
+            SourceIdentity: GITHUB_ACTOR_SANITIZED,
             Tags: [
                 {Key: 'GitHub', Value: 'Actions'},
                 {Key: 'Repository', Value: ENVIRONMENT_VARIABLE_OVERRIDES.GITHUB_REPOSITORY},
@@ -734,6 +744,7 @@ describe('Configure AWS Credentials', () => {
             RoleArn: ROLE_ARN,
             RoleSessionName: 'GitHubActions',
             DurationSeconds: 21600,
+            SourceIdentity: GITHUB_ACTOR_SANITIZED,
             Tags: undefined
         })
     });
@@ -748,6 +759,7 @@ describe('Configure AWS Credentials', () => {
             RoleArn: ROLE_ARN,
             RoleSessionName: 'GitHubActions',
             DurationSeconds: 21600,
+            SourceIdentity: GITHUB_ACTOR_SANITIZED,
             Tags: [
                 {Key: 'GitHub', Value: 'Actions'},
                 {Key: 'Repository', Value: ENVIRONMENT_VARIABLE_OVERRIDES.GITHUB_REPOSITORY},
@@ -770,6 +782,7 @@ describe('Configure AWS Credentials', () => {
             RoleArn: ROLE_ARN,
             RoleSessionName: 'GitHubActions',
             DurationSeconds: 21600,
+            SourceIdentity: GITHUB_ACTOR_SANITIZED,
             Tags: [
                 {Key: 'GitHub', Value: 'Actions'},
                 {Key: 'Repository', Value: ENVIRONMENT_VARIABLE_OVERRIDES.GITHUB_REPOSITORY},
