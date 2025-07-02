@@ -1,3 +1,18 @@
+# _IMPORTANT_
+
+This forked repo has not been maintained with most of the code being updated and missing security patches.
+
+The recommendation is to use the community-maintained repo for this GHA action [aws-actions/configure-aws-credentials](https://github.com/aws-actions/configure-aws-credentials).
+
+This repo will be archived soon.
+================================
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
 ## Configure AWS Credentials for GitHub Actions
 Configure your AWS credentials and region environment variables for use in other
 GitHub Actions. This action implements the AWS SDK credential resolution chain
